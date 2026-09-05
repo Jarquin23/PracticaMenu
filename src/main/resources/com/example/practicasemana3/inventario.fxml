@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane style="-fx-background-color: #2c3e50;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practicasemana3.ProductoController">
+    <children>
+        <VBox spacing="10.0" style="-fx-background-color: #2c3e50;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu text="Archivo">
+                            <items>
+                                <MenuItem fx:id="newMenu" onAction="#nuevoProducto" text="Nuevo" />
+                                <MenuItem fx:id="cleanMenu" onAction="#limpiarProductos" text="Limpiar" />
+                                <SeparatorMenuItem />
+                                <MenuItem fx:id="menuSalir" onAction="#salirAplicacion" text="Salir" />
+                            </items>
+                        </Menu>
+                        <Menu text="Producto">
+                            <items>
+                                <MenuItem fx:id="menuGuardar" onAction="#guardarProducto" text="Guardar" />
+                                <MenuItem fx:id="menuEditar" onAction="#editarProducto" text="Editar" />
+                                <MenuItem fx:id="menuEliminar" onAction="#eliminarProducto" text="Eliminar" />
+                            </items>
+                        </Menu>
+                        <Menu text="Ayuda">
+                            <items>
+                                <MenuItem fx:id="menuAbout" onAction="#acercaDe" text="Acerca de" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <ToolBar>
+                    <items>
+                        <Button fx:id="btnNew" onAction="#nuevoProducto" style="-fx-background-color: #595050;" text="Nuevo" textFill="WHITE" />
+                        <Button fx:id="btnSave" onAction="#guardarProducto" style="-fx-background-color: #49914a;" text="Guardar" textFill="WHITE" />
+                        <Button fx:id="btnEdit" onAction="#editarProducto" style="-fx-background-color: #4e53b7;" text="Editar" textFill="WHITE" />
+                        <Button fx:id="btnDelete" onAction="#eliminarProducto" style="-fx-background-color: #d10808;" text="Eliminar" textFill="WHITE" />
+                    </items>
+                </ToolBar>
+                <GridPane hgap="10.0" vgap="10.0">
+                    <padding>
+                        <Insets bottom="5" left="5" right="5" top="5" />
+                    </padding>
+                    <columnConstraints>
+                        <ColumnConstraints prefWidth="80" />
+                        <ColumnConstraints prefWidth="150" />
+                        <ColumnConstraints prefWidth="80" />
+                        <ColumnConstraints prefWidth="200" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints prefHeight="30" />
+                        <RowConstraints prefHeight="30" />
+                        <RowConstraints prefHeight="30" />
+                    </rowConstraints>
+                    <children>
+                        <!-- Fila 1 -->
+                        <Label style="-fx-background-color: #ffffff;" text="Código:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="txtCode" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Label style="-fx-background-color: #ffffff;" text="Nombre:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                        <TextField fx:id="txtName" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                        <!-- Fila 2 -->
+                        <Label style="-fx-background-color: #ffffff;" text="Categoría:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtCategory" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label style="-fx-background-color: #ffffff;" text="Precio:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtPrice" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <!-- Fila 3 -->
+                        <Label style="-fx-background-color: #ffffff;" text="Existencia:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtStock" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label style="-fx-background-color: #ffffff;" text="Preparación:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtPreparation" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                    </children>
+                </GridPane>
+
+                <TableView fx:id="tvProducts" prefHeight="280.0">
+                    <columns>
+                        <TableColumn fx:id="colCode" prefWidth="80" text="Código" />
+                        <TableColumn fx:id="colName" prefWidth="150" text="Nombre" />
+                        <TableColumn fx:id="colCategory" prefWidth="120" text="Categoría" />
+                        <TableColumn fx:id="colPrice" prefWidth="100" text="Precio" />
+                        <TableColumn fx:id="colStock" prefWidth="100" text="Existencia" />
+                        <TableColumn fx:id="colPreparation" prefWidth="280" text="Preparación" />
+                    </columns>
+                </TableView>
+                <Label fx:id="lblStatus" style="-fx-background-color: #f0f0f0; -fx-padding: 5px;" text="Sistema listo" />
+
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
