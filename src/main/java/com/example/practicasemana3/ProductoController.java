@@ -53,7 +53,6 @@ public class ProductoController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         productosList = FXCollections.observableArrayList();
 
-        // Configurar columnas
         colCode.setCellValueFactory(new PropertyValueFactory<>("codigo"));
         colName.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colCategory.setCellValueFactory(new PropertyValueFactory<>("categoria"));
@@ -79,7 +78,6 @@ public class ProductoController implements Initializable {
                     }
                 }
         );
-
         actualizarEstadoBotones(false);
         lblStatus.setText("Sistema listo. Agregue un nuevo producto o seleccione uno existente.");
         agregarProductosEjemplo();
